@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!--Overhead stuff-->
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birthday Analyzer</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <!--Main content, where stuff will be-->
     <h1>
       Birthday Analyzer
     </h1>
     
-    <input type="datetime-local"> <!-- add submit button-->
-    <!--placeholder for nasa image-->
-    <!--placeholder for billboard-->
-    <!--placeholder for horroscope-->
+    <div display="flex" align-items="center" justify-content: center width="100%">
+        <table margin-left="auto" margin-right="auto">
+            <tr>
+                <td><input type="date" name="date_input"></td>
+                <td><input type="button" value="Submit"></td>
+            </tr>
+        </table>
+    </div>
+    
+    <div id="horoscope" align-items="center" width="100%">
+        <svg>
+            <rect x="0" y="0" width="100" height="100"></rect>
+            <text x="10" y="50" fill="white">horoscope</text>
+        </svg>
+    </div>
+    
+    <div id="NASA_POD" class="NASA_POD" align-items="center" justify-content: center width="100%">
+        <img src="https://apod.nasa.gov/apod/image/2211/LunarEclipseRyanHan.jpg" height="auto" width="100%" id="NASA_POD_img" class="NASA_POD">
+        <p id="NASA_POD_text" class="NASA_POD">NASA picture of the day from November 11, 2022</p>
+    </div>
+    
+    <div id="billboard" >
+        <p>I've no idea how we're going to display this at present.</p>
+        <svg>
+            <rect x="0" y="0" width="100" height="100"></rect>
+            <text x="10" y="50" fill="white">Billboard</text>
+        </svg>
+        
+    </div>
 
   </body>
 </html>
