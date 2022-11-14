@@ -5,10 +5,17 @@
 }
 
 #bday-select-container{
+    display: flex;
     justify-content: center;
-    flex-direction: row;
+    align-items: center;
+    flex-direction: column;
     margin-top: 2em;
     margin-bottom: 2em;
+}
+
+#bday-select-table{
+    margin-left:auto;
+    margin-right:auto;
 }
 
 input{
@@ -18,6 +25,7 @@ input{
 #bday-text{
     font-size: 2em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
 }
 
 #space-table{
@@ -34,7 +42,7 @@ input{
     width:50%;
     display: flex;
     justify-content:center;
-    align-content: center;
+    align-items: center;
     flex-direction: row;
 }
 
@@ -42,14 +50,14 @@ input{
     width:50%;
     display: flex;
     justify-content:center;
-    align-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
 #billboard-container{
     display:flex;
     justify-content:center;
-    align-content: center;
+    align-items: center;
     flex-direction: row;
 }
 
