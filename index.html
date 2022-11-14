@@ -7,39 +7,46 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>
+    <header>
       Birthday Analyzer
-    </h1>
+    </header>
     
-    <div display="flex" align-items="center" justify-content: center width="100%">
-        <table margin-left="auto" margin-right="auto">
+    <div id="bday-select-container" class="content-container">
+        <table class="content">
             <tr>
-                <td><input type="date" name="date_input"></td>
-                <td><input type="button" value="Submit"></td>
+                <td><input type="date" name="date-input" id="date-input"></td>
+                <td><input type="button" value="Submit" id="submit-button"></td>
             </tr>
         </table>
+        <p id="bday-text" class="content"></p>
     </div>
     
-    <div id="horoscope" align-items="center" width="100%">
-        <svg>
-            <rect x="0" y="0" width="100" height="100"></rect>
-            <text x="10" y="50" fill="white">horoscope</text>
-        </svg>
+    <div class="content-container">
+      <table id="space-table">
+        <tr id="space-row">
+            <td id="horoscope-container">
+              <svg width="100" height="100">
+                <!--Don't know how we're displaying this - Jenna, this is on you -->
+                <rect x="0" y="0" width="100" height="100"></rect>
+                <text x="10" y="50" fill="white">horoscope</text>
+              </svg>
+            </td>
+            <td id="NASA_POD-container">
+              <img id="NASA_POD-img" class="content" src="https://apod.nasa.gov/apod/image/2211/LunarEclipseRyanHan.jpg">
+              <p id="NASA_POD-text" class="content">NASA picture of the day from November 11, 2022</p>
+            </td>
+        </tr>
+      </table>
     </div>
     
-    <div id="NASA_POD" class="NASA_POD" align-items="center" justify-content: center width="100%">
-        <img src="https://apod.nasa.gov/apod/image/2211/LunarEclipseRyanHan.jpg" height="auto" width="100%" id="NASA_POD_img" class="NASA_POD">
-        <p id="NASA_POD_text" class="NASA_POD">NASA picture of the day from November 11, 2022</p>
-    </div>
-    
-    <div id="billboard" >
-        <p>I've no idea how we're going to display this at present.</p>
-        <svg>
+    <div id="billboard-container" class="content-container" >
+      <!--This is a placeholder, I don't know how you want to do this Jenna-->
+        <svg class="content" width="100" height="100">
             <rect x="0" y="0" width="100" height="100"></rect>
             <text x="10" y="50" fill="white">Billboard</text>
         </svg>
         
     </div>
-
+    <script src="script.js"></script>
   </body>
 </html>

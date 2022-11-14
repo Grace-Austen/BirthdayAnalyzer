@@ -1,0 +1,66 @@
+.content-container{
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#bday-select-container{
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+input{
+    font-size:1.5em;
+}
+
+#bday-text{
+    font-size: 2em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#space-table{
+    width:100%;
+}
+
+#space-row{
+    display:flex;
+    justify-content:center;
+    flex-direction: row;
+}
+
+#horoscope-container{
+    width:50%;
+    display: flex;
+    justify-content:center;
+    align-content: center;
+    flex-direction: row;
+}
+
+#NASA_POD-container{
+    width:50%;
+    display: flex;
+    justify-content:center;
+    align-content: center;
+    flex-direction: column;
+}
+
+#billboard-container{
+    display:flex;
+    justify-content:center;
+    align-content: center;
+    flex-direction: row;
+}
+
+header{
+    font-size:4.5em;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+.content{
+    margin-left:auto;
+    margin-right:auto;
+    width:fit-content;
+}
