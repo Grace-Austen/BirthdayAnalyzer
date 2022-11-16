@@ -52,40 +52,40 @@ function inputToDateText(input_date) {
                 break;
         }
         switch (+date[1]) {
-            case "1":
+            case 1:
                 dateString += "January "
                 break;
-            case "2":
+            case 2:
                 dateString += "February "
                 break;
-            case "3":
+            case 3:
                 dateString += "March "
                 break;
-            case "4":
+            case 4:
                 dateString += "April "
                 break;
-            case "5":
+            case 5:
                 dateString += "May "
                 break;
-            case "6":
+            case 6:
                 dateString += "June "
                 break;
-            case "7":
+            case 7:
                 dateString += "July "
                 break;
-            case "8":
+            case 8:
                 dateString += "August "
                 break;
-            case "9":
+            case 9:
                 dateString += "September "
                 break;
-            case "10":
+            case 10:
                 dateString += "October "
                 break;
-            case "11":
+            case 11:
                 dateString += "November "
                 break;
-            case "12":
+            case 12:
                 dateString += "December "
                 break;
             default:
