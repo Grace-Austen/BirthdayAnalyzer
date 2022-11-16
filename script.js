@@ -21,6 +21,7 @@ function run() {
 
 function inputToDateText(input_date) {
     if (input_date) {
+        error_message = "Enter a date!"
         day = new Date(input_date).getDay()
         console.log(input_date)
         date = input_date.split("-")
@@ -47,10 +48,10 @@ function inputToDateText(input_date) {
                 dateString = "Saturday, "
                 break;
             default:
-                dateString = "Enter a date!"
+                dateString = error_message
                 break;
         }
-        switch (date[1]) {
+        switch (+date[1]) {
             case "1":
                 dateString += "January "
                 break;
@@ -88,11 +89,11 @@ function inputToDateText(input_date) {
                 dateString += "December "
                 break;
             default:
-                dateString = "Enter a date!"
+                dateString = error_message
                 break;
         }
         dateString += `${date[2]}, ${date[0]}`
-        return dateString
+        return dateString.includes(error_message) ? error_message : dateString
     }
     return "Enter a date!"
 }
