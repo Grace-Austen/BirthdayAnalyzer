@@ -5,6 +5,7 @@ Hi, this project focuses on creating a website that combines 3 key API's:
  - [NASA API](https://api.nasa.gov/)
  - [Astrosoft API](http://docs.innovativeastrosolutions.com/)
  - [Billboard API](www.google.com)
+ - [Aztro API](https://rapidapi.com/sameer.kumar/api/aztro)
 
 This website will pull all of these together to let you know what was happening on your birthday, what your horoscope is, and what NASA's picutre of the day was!
 ## Authors
