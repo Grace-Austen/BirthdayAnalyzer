@@ -2,7 +2,7 @@ import requests
 import json
 # import webbrowser
 
-def nasaPOD(string date):
+def nasaPOD(self, date):
 	#API KEY
 	API_KEY = 'E24iDq9jhvLGggYsFugUinAXI2aAeropVkq8DNZz'
 
