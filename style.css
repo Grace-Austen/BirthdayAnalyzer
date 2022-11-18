@@ -1,7 +1,31 @@
 .content-container{
-    width:90%;
+    width:80%;
     margin-left:auto;
     margin-right:auto;
+}
+
+.inner-container{
+    width:50%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.content{
+    margin-left:auto;
+    margin-right:auto;
+    width:100%;
+}
+
+input{
+    font-size:1.5em;
+}
+
+header{
+    font-size:4.5em;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
 }
 
 #bday-select-container{
@@ -18,21 +42,20 @@
     margin-right:auto;
 }
 
-input{
-    font-size:1.5em;
-}
-
 #bday-text{
     font-size: 2em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
 }
 
-#space-table{
+#other-table{
     width:100%;
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
 }
 
-#space-row{
+.row-container{
     display:flex;
     justify-content:center;
     flex-direction: row;
@@ -54,21 +77,6 @@ input{
     flex-direction: column;
 }
 
-#billboard-container{
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    flex-direction: row;
-}
-
-header{
-    font-size:4.5em;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-align: center;
-}
-
-.content{
-    margin-left:auto;
-    margin-right:auto;
-    width:100%;
+#florida-man-container{
+    flex-direction: column;
 }
