@@ -86,8 +86,7 @@ class horoscope:
     #setter of the variable day, which assigns variable and updates the class
     def setDat(self, day):
         self.day = day
-        self.findSign()
-        self.getHoroscope()
+        self.main()
 
 
     #returns the month for which we are finding horoscope for
@@ -98,8 +97,7 @@ class horoscope:
     #setter of the variable month, which assigns variable and updates the class
     def setMonth(self, month):
         self.month = month
-        self.findSign()
-        self.getHoroscope()
+        self.main()
 
     #return the sign that corresponds to the given day and date
     def getSign(self):
