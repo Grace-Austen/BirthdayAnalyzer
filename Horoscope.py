@@ -76,23 +76,35 @@ class horoscope:
         self.color = responseJson["color"]
         self.luckyNumber = responseJson["lucky_number"]
         self.luckyTime = responseJson["lucky_time"]
-        print(self.sign + ": " + responseJson["description"])
+        #print(self.sign + ": " + responseJson["description"])
         return responseJson
 
     #returns the day that we are finding horoscope for
     def getDay(self):
         return self.day
 
+    #setter of the variable day, which assigns variable and updates the class
+    def setDat(self, day):
+        self.day = day
+        self.main()
+
+
     #returns the month for which we are finding horoscope for
     def getMonth(self):
         return self.month
+
+    
+    #setter of the variable month, which assigns variable and updates the class
+    def setMonth(self, month):
+        self.month = month
+        self.main()
 
     #return the sign that corresponds to the given day and date
     def getSign(self):
         return self.sign
 
-    #returns the horoscope of given sign
-    def getDescriptio(self):
+    #returns the horoscope of given sign (ACTUAL HOROSCOPE)
+    def getDescription(self):
         return self.description
 
     #returns a compatibility to other sing of the given sign
@@ -124,3 +136,6 @@ class horoscope:
 #Example run 
 test = horoscope(23,5)
 test.main()
+print(test.getDescription())
+test.setMonth(9)
+print(test.getDescription())
