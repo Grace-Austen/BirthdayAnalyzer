@@ -96,7 +96,6 @@ function inputToDateText(input_date) {
 }
 
 function update(chosen_date){
-    console.log("doing the thing", chosen_date)
     bday_text = document.getElementById("bday-text")
     nasaPOD_img = document.getElementById("NASA_POD-img")
     nasaPOD_text = document.getElementById("NASA_POD-text")
@@ -104,7 +103,11 @@ function update(chosen_date){
     setText(bday_text, curr_date_text)
     nasaPOD(chosen_date).then(data => {
         nasaPOD_img.src = data["img_url"]
-        nasaPOD_text.textContent = `NASA picture of the day from ${curr_date_text}`
+        if(data["valid"]){        
+            nasaPOD_text.textContent = `NASA picture of the day from ${curr_date_text}`
+        } else {
+            nasaPOD_text.innerHTML = "Out of image fetches<br>NASA picture of the day from November 11, 2022"
+        }
     })
 }
 
