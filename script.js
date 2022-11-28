@@ -1,29 +1,26 @@
-document.addEventListener("DOMContentLoaded", run()) //wait for all the html elements to be loaded in before they can run
+document.addEventListener("load", run()) //wait for all the html elements to be loaded in before they can run
+document.cookie = "SameSite=Strict"
 
 function run() {
     submit_button = document.getElementById("submit-button")
     date_input = document.getElementById("date-input")
-    bday_text = document.getElementById("bday-text")
 
     current_date = new Date()
     chosen_date = `${current_date.getFullYear()}-${current_date.getMonth() + 1}-${current_date.getDate()}`
     date_input.value = chosen_date
 
-    setText(bday_text, inputToDateText(chosen_date))
+    update(chosen_date)
 
-    submit_button.addEventListener("click", event => setText(bday_text, inputToDateText(chosen_date)))
+    submit_button.addEventListener("click", update(chosen_date))
     date_input.addEventListener("input", event => {
         chosen_date = date_input.value
     })
-
-
 }
 
 function inputToDateText(input_date) {
     if (input_date) {
         error_message = "Enter a date!"
         day = new Date(input_date).getDay()
-        console.log(input_date)
         date = input_date.split("-")
         switch(day) {
             case 0:
@@ -96,6 +93,19 @@ function inputToDateText(input_date) {
         return dateString.includes(error_message) ? error_message : dateString
     }
     return "Enter a date!"
+}
+
+function update(chosen_date){
+    console.log("doing the thing", chosen_date)
+    bday_text = document.getElementById("bday-text")
+    nasaPOD_img = document.getElementById("NASA_POD-img")
+    nasaPOD_text = document.getElementById("NASA_POD-text")
+    curr_date_text = inputToDateText(chosen_date)
+    setText(bday_text, curr_date_text)
+    nasaPOD(chosen_date).then(data => {
+        nasaPOD_img.src = data["img_url"]
+        nasaPOD_text.textContent = `NASA picture of the day from ${curr_date_text}`
+    })
 }
 
 function setText(elem, text) {

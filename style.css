@@ -76,6 +76,13 @@ header{
     align-items: center;
     flex-direction: column;
 }
+#NASA_POD-img{
+    max-height:50vh;
+    width: auto;
+}
+#NASA_POD-text{
+    width: max-content;
+}
 
 #florida-man-container{
     flex-direction: column;
