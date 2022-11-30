@@ -14,7 +14,7 @@ function nasaPOD(date) {
             new_date = `${current_date.getFullYear()}` + date.slice(4)
             json = fetch_img_json(new_date)
         }
-        return {"date": json["date"], "img_url": json["hdurl"]} //image existed, return img url
+        return {"date": json["date"], "img_url": json["hdurl"], "valid": true} //image existed, return img url
     })
 }
 
