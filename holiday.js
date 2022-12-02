@@ -1,14 +1,10 @@
 // testing out holiday api (may need to find another one)
 
-let request = new XMLHttpRequest();
-request.open("GET", "https://holidayapi.com/v1/holidays")
-request.send();
-request.onload = () => {
-    console.log(request);
-    if (request.status === 200){
-        console.log(JSON.parse(request.response));
-    }
-    else {
-        console.log(`error ${request.status} ${request.statusText}`)
-    }
-}
+
+
+fetch('https://www.daysoftheyear.com/api/v1/date/', {
+  method: "GET",
+  headers: {"X-Api-Key": "69dbc4410e9e44d8fa70fa6261b72838"}
+})
+.then(response => response.json()) 
+.then(json => console.log(json)); 
