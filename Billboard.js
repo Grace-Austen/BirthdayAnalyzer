@@ -14,4 +14,4 @@ function getSongs(callback) {
 	});
 }
 
-module.exports = { getSongs, getAlbums, getArtists };
+module.exports = { getSongs };
