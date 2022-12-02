@@ -107,6 +107,8 @@ function update(chosen_date){
     horoscope_container = document.getElementById("horoscope-container")
     nasaPOD_img = document.getElementById("NASA_POD-img")
     nasaPOD_text = document.getElementById("NASA_POD-text")
+    billboard_list = document.getElementById("billboard-container")
+    billboard_text = document.getElementById("billboard-text")
 
     //call funcs, set corresponding elements
     curr_date_text = inputToDateText(chosen_date)
@@ -128,6 +130,11 @@ function update(chosen_date){
                                         <p>You are compatible with the ${data.compatibility} sign</p>
                                         <p>You are likely to be in a ${data.mood} mood today!</p>
                                         `
+    })
+
+    Billboard(chosen_date).then(data => {
+        billboard_list.innerHTML = ` <p id="billboard-type">${getSongs(chosen_date)}</p> `
+
     })
 }
 
