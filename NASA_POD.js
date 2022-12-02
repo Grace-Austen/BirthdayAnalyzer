@@ -6,7 +6,7 @@ api_url = 'https://api.nasa.gov/planetary/apod'
 
 function nasaPOD(date) {
     return fetch_img_json(date).then(json =>{
-        console.log(json)
+        // console.log(json)
         if(json["error"] !== undefined) {
             return {"date": json["date"], "img_url": "https://apod.nasa.gov/apod/image/2211/LunarEclipseRyanHan.jpg", "valid": false}
         }
@@ -14,7 +14,7 @@ function nasaPOD(date) {
             new_date = `${current_date.getFullYear()}` + date.slice(4)
             json = fetch_img_json(new_date)
         }
-        return {"date": json["date"], "img_url": json["hdurl"]} //image existed, return img url
+        return {"date": json["date"], "img_url": json["hdurl"], "valid": true} //image existed, return img url
     })
 }
 
