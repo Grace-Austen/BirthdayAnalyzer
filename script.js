@@ -6,7 +6,7 @@ function run() {
     date_input = document.getElementById("date-input")
 
     current_date = new Date()
-    chosen_date = `${current_date.getFullYear()}-${current_date.getMonth() + 1}-${current_date.getDate()}`
+    chosen_date = `${current_date.getFullYear()}-${String(current_date.getMonth()+1).padStart(2,"0")}-${String(current_date.getDate()).padStart(2,"0")}`
     date_input.value = chosen_date
 
     update(chosen_date)
@@ -97,8 +97,11 @@ function inputToDateText(input_date) {
 
 function update(chosen_date){
     bday_text = document.getElementById("bday-text")
+    horoscope_container = document.getElementById("horoscope-container")
     nasaPOD_img = document.getElementById("NASA_POD-img")
     nasaPOD_text = document.getElementById("NASA_POD-text")
+
+    //call funcs, set corresponding elements
     curr_date_text = inputToDateText(chosen_date)
     setText(bday_text, curr_date_text)
     nasaPOD(chosen_date).then(data => {
@@ -108,6 +111,16 @@ function update(chosen_date){
         } else {
             nasaPOD_text.innerHTML = "Out of image fetches<br>NASA picture of the day from November 11, 2022"
         }
+    })
+    getHoroscope(chosen_date).then(data => {
+        horoscope_container.innerHTML = `
+                                        <p id="horoscope-type">${getSign(chosen_date)}</p>
+                                        <p id="horoscope-descr">${data.description}</p>
+                                        <p>Your lucky time today is ${data.lucky_time}</p>
+                                        <p>Your power color today is ${data.color}</p>
+                                        <p>You are compatible with the ${data.compatibility} sign</p>
+                                        <p>You are likely to be in a ${data.mood} mood today!</p>
+                                        `
     })
 }
 
