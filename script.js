@@ -1,6 +1,7 @@
 document.addEventListener("load", run()) //wait for all the html elements to be loaded in before they can run
 document.cookie = "SameSite=Strict"
 
+
 function run() {
     submit_button = document.getElementById("submit-button")
     date_input = document.getElementById("date-input")
@@ -11,10 +12,12 @@ function run() {
 
     update(chosen_date)
 
-    submit_button.addEventListener("click", update(chosen_date))
     date_input.addEventListener("input", event => {
         chosen_date = date_input.value
     })
+    
+    submit_button.addEventListener("click", update)
+
 }
 
 function inputToDateText(input_date) {
@@ -96,6 +99,10 @@ function inputToDateText(input_date) {
 }
 
 function update(chosen_date){
+
+    chosen_date = date_input.value
+
+
     bday_text = document.getElementById("bday-text")
     horoscope_container = document.getElementById("horoscope-container")
     nasaPOD_img = document.getElementById("NASA_POD-img")
