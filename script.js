@@ -107,8 +107,10 @@ function update(chosen_date){
     horoscope_container = document.getElementById("horoscope-container")
     nasaPOD_img = document.getElementById("NASA_POD-img")
     nasaPOD_text = document.getElementById("NASA_POD-text")
-    billboard_list = document.getElementById("billboard-container")
-    billboard_text = document.getElementById("billboard-text")
+
+    //Attempteed to create Variables -Ferrin 
+    // billboard_list = document.getElementById("billboard-container")
+    // billboard_text = document.getElementById("billboard-text")
 
     //call funcs, set corresponding elements
     curr_date_text = inputToDateText(chosen_date)
@@ -132,10 +134,11 @@ function update(chosen_date){
                                         `
     })
 
-    Billboard(chosen_date).then(data => {
-        billboard_list.innerHTML = ` <p id="billboard-type">${getSongs(chosen_date)}</p> `
+    //Not sure how to link -Ferrin
+    // getSongs(chosen_date).then(data => {
+    //     billboard_list.innerHTML = ` <p id="billboard-type">${curr_date_text}</p> `
 
-    })
+    // })
 }
 
 function setText(elem, text) {
