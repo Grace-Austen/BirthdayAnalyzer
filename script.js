@@ -102,11 +102,17 @@ function update(chosen_date){
 
     chosen_date = date_input.value
 
+    console.log(chosen_date)
 
     bday_text = document.getElementById("bday-text")
     horoscope_container = document.getElementById("horoscope-container")
     nasaPOD_img = document.getElementById("NASA_POD-img")
     nasaPOD_text = document.getElementById("NASA_POD-text")
+    holiday_container = document.getElementById("holiday-container")
+    holiday_title = document.getElementById("holiday-title")
+    holiday_text1 = document.getElementById("holiday-text1")
+    holiday_text2 = document.getElementById("holiday-text2")
+    holiday_text3 = document.getElementById("holiday-text3")
 
     //call funcs, set corresponding elements
     curr_date_text = inputToDateText(chosen_date)
@@ -128,6 +134,23 @@ function update(chosen_date){
                                         <p>You are compatible with the ${data.compatibility} sign</p>
                                         <p>You are likely to be in a ${data.mood} mood today!</p>
                                         `
+    })
+
+    getHoliday(chosen_date).then(data => {
+        console.log(data.holidays[0].name)
+        holiday_title.textContent = `Holidays on ${curr_date_text}`
+        if(typeof(data.holidays[0]) !== "undefined")
+            holiday_text1.textContent = `1. ${data.holidays[0].name}`
+        else
+            holiday_text1.textContent = `There are no holiday's on this day`
+        if (typeof(data.holidays[1]) !== "undefined")
+            holiday_text2.textContent = `2. ${data.holidays[1].name}`
+        else
+            holiday_text2.textContent = ` `
+        if (typeof(data.holidays[2]) !== "undefined")
+            holiday_text3.textContent = `3. ${data.holidays[2].name}`
+        else
+            holiday_text3.textContent = ` `
     })
 }
 
