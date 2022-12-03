@@ -1,49 +1,23 @@
-const { getChart } = require('billboard-top-100');
+//code will not run because of "require" call is only functional on hosted servers. Bc github pages doesnt fully host sites
+// I have to find a workaround. There is an option called Browersify, which should help connect things, but when I tried
+//it wasnt working. So I am unsure of what to do next but I am looking for solutions. Any help would be appreciated
+//if you type in "Uncaught ReferenceError: require is not defined" on Google, you will see the issue I am having.
+const billboard = require("billboard-top-100").getChart;
 
-// date format YYYY-MM-DD
-getChart('hot-100', '2022-11-01', (err, chart) => {
-  if (err) console.log(err);
-  
-  console.log(chart.week);
- 
-  console.log(chart.previousWeek.date);
-  
-  console.log(chart.nextWeek.url);
+//Displays the top 100 songs
+function getSongs(date) {
+	billboard('hot-100', function(err, songs) {
+	    if (
+        err) console.log(err);
+	    let result = [];
+	    for(let i=0; i<songs.length; i++) {
+	    	let song = {name:songs[i].title, artist:songs[i].artist};
+	    	result.push(song);
+	    }
+	    // callback(result);
+      callback(result);
+	    return;
+	});
+}
 
-  console.log(chart.nextWeek.date);
-  
-  console.log(chart.songs);
-  
-  console.log(chart.songs[3]);
-  
-  console.log(chart.songs[0].title);
-  
-  console.log(chart.songs[0].artist);
-  
-  console.log(chart.songs[0].rank);
- 
-  console.log(chart.songs[0].cover);
-  
-  console.log(chart.songs[0].position.positionLastWeek);
-  console.log(chart.songs[0].position.peakPosition);
-  console.log(chart.songs[0].position.weeksOnChart);
-});
-
-
-getChart((err, chart) => {
-  if (err) console.log(err);
-  console.log(chart);
-});
-
-getChart('rock-digital-song-sales', (err, chart) => {
-  if (err) console.log(err);
-  console.log(chart);
-});
-
-const { listCharts } = require('billboard-top-100');
-
-listCharts((err, charts) => {
-  if (err) console.log(err);
-  // array of all charts
-  console.log(charts);
-});
+module.exports = { getSongs };

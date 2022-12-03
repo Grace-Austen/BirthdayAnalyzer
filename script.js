@@ -136,6 +136,16 @@ function update(chosen_date){
                                         `
     })
 
+
+    //Not sure how to link -Ferrin
+    // getSongs(chosen_date).then(data => {
+    //     billboard_list.innerHTML = ` <p id="billboard-type">${curr_date_text}</p> `
+
+    // })
+
+
+
+
     getHoliday(chosen_date).then(data => {
         console.log(data.holidays[0].name)
         holiday_title.textContent = `Holidays on ${curr_date_text}`
