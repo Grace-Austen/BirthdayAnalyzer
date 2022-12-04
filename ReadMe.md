@@ -6,6 +6,10 @@ Hi, this project focuses on creating a website that combines 3 key API's:
  - [Astrosoft API](http://docs.innovativeastrosolutions.com/)
  - [Billboard API](www.google.com)
  - [Aztro API](https://rapidapi.com/sameer.kumar/api/aztro)
+ - [Web Search API] (https://rapidapi.com/contextualwebsearch/api/web-search/)
+ - [Famous Birthdays API] (https://www.famousbirthdays.com/)
+ - [Abstract Holidays API] (https://www.abstractapi.com/api/holidays-api)
+ 
 
 This website will pull all of these together to let you know what was happening on your birthday, what your horoscope is, and what NASA's picutre of the day was!
 ## Authors
