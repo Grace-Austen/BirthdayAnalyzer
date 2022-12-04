@@ -125,6 +125,8 @@ function update(chosen_date){
             nasaPOD_text.innerHTML = "Out of image fetches<br>NASA picture of the day from November 11, 2022"
         }
     })
+
+
     getHoroscope(chosen_date).then(data => {
         horoscope_container.innerHTML = `
                                         <p id="horoscope-type">${getSign(chosen_date)}</p>
@@ -144,21 +146,20 @@ function update(chosen_date){
     // })
 
 
-
-
     getHoliday(chosen_date).then(data => {
-        console.log(data.holidays[0].name)
         holiday_title.textContent = `Holidays on ${curr_date_text}`
-        if(typeof(data.holidays[0]) !== "undefined")
-            holiday_text1.textContent = `1. ${data.holidays[0].name}`
+        console.log(data)
+        console.log(data[0])
+        if(typeof(data[0]) !== "undefined")
+            holiday_text1.textContent = `1. ${data[0].name}`
         else
             holiday_text1.textContent = `There are no holiday's on this day`
-        if (typeof(data.holidays[1]) !== "undefined")
-            holiday_text2.textContent = `2. ${data.holidays[1].name}`
+        if (typeof(data[1]) !== "undefined")
+            holiday_text2.textContent = `2. ${data[1].name}`
         else
             holiday_text2.textContent = ` `
-        if (typeof(data.holidays[2]) !== "undefined")
-            holiday_text3.textContent = `3. ${data.holidays[2].name}`
+        if (typeof(data[2]) !== "undefined")
+            holiday_text3.textContent = `3. ${data[2].name}`
         else
             holiday_text3.textContent = ` `
     })
