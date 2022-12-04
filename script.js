@@ -163,7 +163,55 @@ function update(chosen_date){
         else
             holiday_text3.textContent = ` `
     })
+
+
+    birth_title = document.getElementById("birth-title")
+    birth_text1 = document.getElementById("birth-text1")
+    birth_text2 = document.getElementById("birth-text2")
+    birth_text3 = document.getElementById("birth-text3")
+
+
+    getBirth(chosen_date).then(data => {
+
+        var max = data.births.length
+
+        var first = Math.floor(Math.random() * max);
+        var second = Math.floor(Math.random() * max);
+        var third = Math.floor(Math.random() * max);
+
+        birth_title.textContent = `Famous Birthdays`
+        birth_text1.textContent = `1. ${data.births[first].text}`
+        birth_text2.textContent = `2. ${data.births[second].text}`
+        birth_text3.textContent = `3. ${data.births[third].text}`
+
+
+
+    })
+
+
+    death_title = document.getElementById("death-title")
+    death_text1 = document.getElementById("death-text1")
+    death_text2 = document.getElementById("death-text2")
+    death_text3 = document.getElementById("death-text3")
+
+    getDeath(chosen_date).then(data => {
+        console.log(data)
+
+        var max = data.deaths.length
+
+        var first = Math.floor(Math.random() * max);
+        var second = Math.floor(Math.random() * max);
+        var third = Math.floor(Math.random() * max);
+
+        death_title.textContent = `Famous Deaths (RIP)`
+        death_text1.textContent = `1. ${data.deaths[first].text}`
+        death_text2.textContent = `2. ${data.deaths[second].text}`
+        death_text3.textContent = `3. ${data.deaths[third].text}`
+    })
+
+
 }
+
 
 function setText(elem, text) {
     elem.textContent = text
