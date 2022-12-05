@@ -88,6 +88,10 @@ header{
     text-align: center;
 }
 
+#billboard-container{
+    flex-direction: column;
+}
+
 #florida-man-container{
     flex-direction: column;
 }

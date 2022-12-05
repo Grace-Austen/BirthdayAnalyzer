@@ -105,9 +105,16 @@ function update(chosen_date){
     console.log(chosen_date)
 
     bday_text = document.getElementById("bday-text")
+
+    //spacey stuff elements
     horoscope_container = document.getElementById("horoscope-container")
     nasaPOD_img = document.getElementById("NASA_POD-img")
     nasaPOD_text = document.getElementById("NASA_POD-text")
+
+    //billboard elements
+    billboard_list = document.getElementById("song-list")
+    
+    //holiday elements
     holiday_container = document.getElementById("holiday-container")
     holiday_title = document.getElementById("holiday-title")
     holiday_text1 = document.getElementById("holiday-text1")
@@ -140,16 +147,26 @@ function update(chosen_date){
 
 
     //Not sure how to link -Ferrin
-    // getSongs(chosen_date).then(data => {
-    //     billboard_list.innerHTML = ` <p id="billboard-type">${curr_date_text}</p> `
-
-    // })
+    getSongs(chosen_date).then(data => { //trying to rework it -Grace
+        //we can get a couple of errors: billboard updated every saturday, so you can get a notice field
+        //I'm assuming we can also get an error for ran out of api requests
+        if(data["notice"] === undefined) { //valid week
+            console.log(data.content["1"]["album"])
+            billboard_list.innerHTML = `<ol>${data.content["1"]["album"]} by ${data.content["1"]["artist"]}</ol>
+                                        <ol>${data.content["2"]["album"]} by ${data.content["2"]["artist"]}</ol>
+                                        <ol>${data.content["3"]["album"]} by ${data.content["3"]["artist"]}</ol>
+                                        <ol>${data.content["4"]["album"]} by ${data.content["4"]["artist"]}</ol>
+                                        <ol>${data.content["5"]["album"]} by ${data.content["5"]["artist"]}</ol>`
+        } else {
+            billboard_list.innerHTML = `Sorry, there is no data for this week! Billboard updates their lists every Saturday. Try choosing a date before last Saturday. Sorry for the inconvenience.`
+        }
+    })
 
 
     getHoliday(chosen_date).then(data => {
         holiday_title.textContent = `Holidays on ${curr_date_text}`
-        console.log(data)
-        console.log(data[0])
+        // console.log(data)
+        // console.log(data[0])
         if(typeof(data[0]) !== "undefined")
             holiday_text1.textContent = `1. ${data[0].name}`
         else
