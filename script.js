@@ -25,27 +25,28 @@ function inputToDateText(input_date) {
         error_message = "Enter a date!"
         day = new Date(input_date).getDay()
         date = input_date.split("-")
+        console.log(day)
         switch(day) {
             case 0:
-                dateString = "Sunday, "
-                break;
-            case 1:
                 dateString = "Monday, "
                 break;
-            case 2:
+            case 1:
                 dateString = "Tuesday, "
                 break;
-            case 3:
+            case 2:
                 dateString = "Wednesday, "
                 break;
-            case 4:
+            case 3:
                 dateString = "Thursday, "
                 break;
-            case 5:
+            case 4:
                 dateString = "Friday, "
                 break;
-            case 6:
+            case 5:
                 dateString = "Saturday, "
+                break;
+            case 6:
+                dateString = "Sunday, "
                 break;
             default:
                 dateString = error_message
