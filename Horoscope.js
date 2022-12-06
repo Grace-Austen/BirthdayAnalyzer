@@ -1,6 +1,8 @@
 function getHoroscope(date){
     sign = getSign(date)
-    url = `https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${sign}&day=today`
+    split_date = date.split("-") //[year, month, day]
+    day = +split_date[2]
+    url = `https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${sign}&day=${day}`
     const options = {
         method: 'POST',
         headers: {
