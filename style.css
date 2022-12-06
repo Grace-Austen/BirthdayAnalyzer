@@ -28,6 +28,10 @@ header{
     text-align: center;
 }
 
+p {
+    margin: 0;
+}
+
 #bday-select-container{
     display: flex;
     justify-content: center;
@@ -67,9 +71,16 @@ header{
     justify-content:center;
     align-items: center;
     flex-direction: column;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
+
 #horoscope-descr{
     text-align:center;
+}
+
+#horoscope-type{
+    font-family: satisfy-regular, cursive;
+    font-size: xx-large;
 }
 
 #NASA_POD-container{
@@ -89,7 +100,19 @@ header{
 }
 
 #billboard-container{
+    font-family: blippo-h, fantasy;
     flex-direction: column;
+}
+
+#holiday-list{
+    font-family: baskerville, Georgia, 'Times New Roman', Times, serif;
+}
+#holiday-title{
+    text-decoration: underline;
+}
+
+#famous-birth-container, #famous-death-container{
+    font-style: italic;
 }
 
 #florida-man-container{

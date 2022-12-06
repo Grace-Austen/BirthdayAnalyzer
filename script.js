@@ -108,20 +108,9 @@ function update(chosen_date){
     bday_text = document.getElementById("bday-text")
 
     //spacey stuff elements
-    horoscope_container = document.getElementById("horoscope-container")
     nasaPOD_img = document.getElementById("NASA_POD-img")
     nasaPOD_text = document.getElementById("NASA_POD-text")
-
-    //billboard elements
-    billboard_list = document.getElementById("song-list")
-    
-    //holiday elements
-    holiday_container = document.getElementById("holiday-container")
-    holiday_title = document.getElementById("holiday-title")
-    holiday_text1 = document.getElementById("holiday-text1")
-    holiday_text2 = document.getElementById("holiday-text2")
-    holiday_text3 = document.getElementById("holiday-text3")
-
+  
     //call funcs, set corresponding elements
     curr_date_text = inputToDateText(chosen_date)
     setText(bday_text, curr_date_text)
@@ -134,10 +123,11 @@ function update(chosen_date){
         }
     })
 
+    horoscope_container = document.getElementById("horoscope-container")
 
     getHoroscope(chosen_date).then(data => {
         horoscope_container.innerHTML = `
-                                        <p id="horoscope-type">${getSign(chosen_date)}</p>
+                                        <p id="horoscope-type"><b>${getSign(chosen_date)}</b></p>
                                         <p id="horoscope-descr">${data.description}</p>
                                         <p>Your lucky time today is ${data.lucky_time}</p>
                                         <p>Your power color today is ${data.color}</p>
@@ -146,6 +136,8 @@ function update(chosen_date){
                                         `
     })
 
+    //billboard elements
+    billboard_list = document.getElementById("song-list")
 
     //Not sure how to link -Ferrin
     getSongs(chosen_date).then(data => { //trying to rework it -Grace
@@ -163,6 +155,12 @@ function update(chosen_date){
         }
     })
 
+    //holiday elements
+    holiday_container = document.getElementById("holiday-container")
+    holiday_title = document.getElementById("holiday-title")
+    holiday_text1 = document.getElementById("holiday-text1")
+    holiday_text2 = document.getElementById("holiday-text2")
+    holiday_text3 = document.getElementById("holiday-text3")
 
     getHoliday(chosen_date).then(data => {
         holiday_title.textContent = `Holidays on ${curr_date_text}`
@@ -198,9 +196,9 @@ function update(chosen_date){
         var third = Math.floor(Math.random() * max);
 
         birth_title.textContent = `Famous Birthdays`
-        birth_text1.textContent = `1. ${data.births[first].text}`
-        birth_text2.textContent = `2. ${data.births[second].text}`
-        birth_text3.textContent = `3. ${data.births[third].text}`
+        birth_text1.textContent = `${data.births[first].text}`
+        birth_text2.textContent = `${data.births[second].text}`
+        birth_text3.textContent = `${data.births[third].text}`
 
 
 
@@ -222,9 +220,9 @@ function update(chosen_date){
         var third = Math.floor(Math.random() * max);
 
         death_title.textContent = `Famous Deaths (RIP)`
-        death_text1.textContent = `1. ${data.deaths[first].text}`
-        death_text2.textContent = `2. ${data.deaths[second].text}`
-        death_text3.textContent = `3. ${data.deaths[third].text}`
+        death_text1.textContent = `${data.deaths[first].text}`
+        death_text2.textContent = `${data.deaths[second].text}`
+        death_text3.textContent = `${data.deaths[third].text}`
     })
 
 

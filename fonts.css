@@ -1,0 +1,23 @@
+/* If you want to add more fonts:
+download the font as a .ttf and add it to the fonts folder
+copy the following and add it to this doc
+@font-face {
+    font-family: name-of-font-to-use;
+    src: url(fonts/font.ttf);
+  }
+*/
+
+@font-face {
+    font-family: satisfy-regular;
+    src: url(fonts/Satisfy-Regular.ttf);
+  }
+
+@font-face {
+    font-family: blippo-h;
+    src: url(fonts/Blippo-h.ttf);
+  }
+
+  @font-face {
+    font-family: baskerville;
+    src: url(fonts/LibreBaskerville-Bold.ttf);
+  }
