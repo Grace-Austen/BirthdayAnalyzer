@@ -4,6 +4,10 @@
     margin-right:auto;
 }
 
+.content{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .inner-container{
     width:50%;
     display:flex;
@@ -24,7 +28,8 @@ input{
 
 header{
     font-size:4.5em;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: lobster, cursive;
+    /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
     text-align: center;
 }
 
@@ -32,23 +37,39 @@ p {
     margin: 0;
 }
 
-#bday-select-container{
+.row-container {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* #bday-select-container{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 2em;
-    margin-bottom: 2em;
-}
+    
+} */
 
 #bday-select-table{
+    margin-top: 2em;
+    margin-bottom: 1em;
     margin-left:auto;
     margin-right:auto;
 }
 
+#date-input, #submit-button{
+    font-size: 1em;
+}
+
+.bday-select-table-cell{
+    padding-left:10px;
+    padding-right:10px;
+}
+
 #bday-text{
-    font-size: 2em;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5em;
     text-align: center;
 }
 
@@ -69,18 +90,22 @@ p {
     width:50%;
     display: flex;
     justify-content:center;
-    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
     flex-direction: column;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#horoscope-descr{
-    text-align:center;
-}
-
 #horoscope-type{
+    text-align: center;
     font-family: satisfy-regular, cursive;
     font-size: xx-large;
+}
+
+.horoscope-text{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #NASA_POD-container{
@@ -107,13 +132,13 @@ p {
 #holiday-list{
     font-family: baskerville, Georgia, 'Times New Roman', Times, serif;
 }
-#holiday-title{
+/* #holiday-title{
     text-decoration: underline;
-}
+} */
 
-#famous-birth-container, #famous-death-container{
+/* #famous-birth-container, #famous-death-container{
     font-style: italic;
-}
+} */
 
 #florida-man-container{
     flex-direction: column;
