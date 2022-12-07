@@ -32,6 +32,13 @@ p {
     margin: 0;
 }
 
+td {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+
 #bday-select-container{
     display: flex;
     justify-content: center;
