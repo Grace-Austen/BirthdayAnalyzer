@@ -1,40 +1,27 @@
-const axios = require("axios");
-
-
-const searchResults = {
-    data:  ["url1", "url2", "url3"]
-};
-
 async function getSearches(date) {
     // defining request
     const options = {
         method: 'GET',
-        url: 'https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/WebSearchAPI',
-        params: {q: 'florida man ' + date, pageNumber: '1', pageSize: '10', autoCorrect: 'false'},
         headers: {
-            'X-RapidAPI-Key': 'placeholder',
+            'X-RapidAPI-Key': 'bf5c1ebaa5msh882d068e31c56ecp1a13dajsnb7d4ba49e04c',
             'X-RapidAPI-Host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
         }
     };
-
-    // sending request
-    axios.request(options)
-    // recieved request
-    .then(function (response) {
-        // console.log(response.data);
-        // return response.data.value[i].url;
-        for (let i = 0; i < 3; i ++) {
-            searchResults.data[i] = response.data.value[i].url;
-        }
-        return searchResults;
-        
-    })
-    // request not received
-    .catch(function (error) {
-        // console.error(error);
-    });
-
+    //let query = `Florida%20Man%20${date}`;
+    let query = 'hi'
+    let pageNumber = 1;
+    let pageSize = 10;
+    let autoCorrect = true;
+    let safeSearch = false;
+    fetch(`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/WebSearchAPI?
+        q=${query}
+        &pageNumber=${pageNumber}
+        &pageSize=${pageSize}
+        &autoCorrect=${autoCorrect}`, options)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
     
 }
-
-//getSearches();
+getSearches('5-28');
+//consolse.log(getSearches('may 25').data[0]);
