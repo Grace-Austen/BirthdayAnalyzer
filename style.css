@@ -32,7 +32,7 @@ p {
     margin: 0;
 }
 
-td {
+.row-container {
     border: 1px solid black;
     border-radius: 10px;
     padding: 10px;
@@ -76,19 +76,25 @@ td {
     width:50%;
     display: flex;
     justify-content:center;
-    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
     flex-direction: column;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#horoscope-descr{
-    text-align:center;
-}
-
 #horoscope-type{
+    text-align: center;
     font-family: satisfy-regular, cursive;
     font-size: xx-large;
 }
+
+.horoscope-text{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 
 #NASA_POD-container{
     width:50%;
