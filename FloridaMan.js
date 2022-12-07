@@ -12,7 +12,7 @@ async function getSearches(date) {
         url: 'https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/WebSearchAPI',
         params: {q: 'florida man ' + date, pageNumber: '1', pageSize: '10', autoCorrect: 'false'},
         headers: {
-            'X-RapidAPI-Key': 'bf5c1ebaa5msh882d068e31c56ecp1a13dajsnb7d4ba49e04c',
+            'X-RapidAPI-Key': 'placeholder',
             'X-RapidAPI-Host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
         }
     };
