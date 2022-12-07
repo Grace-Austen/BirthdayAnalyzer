@@ -1,11 +1,11 @@
-* {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
 .content-container{
     width:80%;
     margin-left:auto;
     margin-right:auto;
+}
+
+.content{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .inner-container{
@@ -101,8 +101,6 @@ p {
     margin-left: auto;
     margin-right: auto;
 }
-
-
 
 #NASA_POD-container{
     width:50%;
