@@ -138,23 +138,25 @@ function update(chosen_date){
                                         `
     })
 
-    //billboard elements
-    billboard_list = document.getElementById("song-list")
+    movie_title = document.getElementById("movie-title")
+    movie_text1 = document.getElementById("movie-text1")
+    movie_text2 = document.getElementById("movie-text2")
+    movie_text3 = document.getElementById("movie-text3")
+    movie_pic1 = document.getElementById("movie_pic1")
+    movie_pic2 = document.getElementById("movie_pic2")
+    movie_pic3 = document.getElementById("movie_pic3")
+   
+   getMovies(chosen_date).then(data => {
+    movie_title.textContent = `Movies`
 
-    //Not sure how to link -Ferrin
-    getSongs(chosen_date).then(data => { //trying to rework it -Grace
-        //we can get a couple of errors: billboard updated every saturday, so you can get a notice field
-        //I'm assuming we can also get an error for ran out of api requests
-        if(data["notice"] === undefined) { //valid week
-            console.log(data.content["1"]["album"])
-            billboard_list.innerHTML = `<ol>${data.content["1"]["album"]} by ${data.content["1"]["artist"]}</ol>
-                                        <ol>${data.content["2"]["album"]} by ${data.content["2"]["artist"]}</ol>
-                                        <ol>${data.content["3"]["album"]} by ${data.content["3"]["artist"]}</ol>
-                                        <ol>${data.content["4"]["album"]} by ${data.content["4"]["artist"]}</ol>
-                                        <ol>${data.content["5"]["album"]} by ${data.content["5"]["artist"]}</ol>`
-        } else {
-            billboard_list.innerHTML = `Sorry, there is no data for this week! Billboard updates their lists every Saturday. Try choosing a date before last Saturday. Sorry for the inconvenience.`
-        }
+    movie_text1.textContent = `${data.results[0].original_title}`
+    movie_pic1.src =`https://image.tmdb.org/t/p/w500/${data.results[0].poster_path}`
+    
+    movie_text2.textContent = `${data.results[1].original_title}`
+    movie_pic2.src = `https://image.tmdb.org/t/p/w500/${data.results[1].poster_path}`
+
+    movie_text3.textContent = `${data.results[2].original_title}`
+    movie_pic3.src = `https://image.tmdb.org/t/p/w500/${data.results[2].poster_path}`
     })
 
     //holiday elements
