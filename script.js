@@ -168,6 +168,8 @@ function update(chosen_date){
 
     getHoliday(chosen_date).then(data => {
 
+        console.log(data)
+
         holiday_title.textContent = `Holidays on ${curr_date_text}`
         // console.log(data)
         // console.log(data[0])
@@ -185,11 +187,8 @@ function update(chosen_date){
             holiday_text3.textContent = ` `
     })
 
-     birth_container = document.getElementById("famous-birth-container")
-    // birth_title = document.getElementById("birth-title")
-    // birth_text1 = document.getElementById("birth-text1")
-    // birth_text2 = document.getElementById("birth-text2")
-    // birth_text3 = document.getElementById("birth-text3")
+    birth_container = document.getElementById("famous-birth-container")
+    birth_title = document.getElementById("birth-title")
 
 
     getBirth(chosen_date).then(data => {
@@ -203,33 +202,17 @@ function update(chosen_date){
         var second = Math.floor(Math.random() * max);
         var third = Math.floor(Math.random() * max);
 
-        birth_container.textContent = `Famous Birthdays`
 
         birth_container.innerHTML = `
-                                        <h3 id="birth-title"><b>Famous Birthdays</b></h3>
-                                        <tr>
                                             <ol id="famous-birth-list">
-                                            <li><a href="${data.births[first].pages[0].content_urls.desktop.page}">${data.births[first].text}</a></li>
-                                            <li><a href="${data.births[second].pages[0].content_urls.desktop.page}">${data.births[second].text}</a></li>
-                                            <li><a href="${data.births[third].pages[0].content_urls.desktop.page}">${data.births[third].text}</a></li>
-                                            </ol>
-                                        </tr>
-                                        `
-
-        // birth_title.textContent = `Famous Birthdays`
-        // birth_text1.textContent = `<a href="${data.births[first].pages[0].content_urls.desktop.page}">${data.births[first].text}</a>`
-        // birth_text2.textContent = `${data.births[second].text}`
-        // birth_text3.textContent = `${data.births[third].text}`
-
-
-
+                                            <h4 id="holiday-title" class="content">Famous Birthdays</h4>
+                                            <li><a href="${data.births[first].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none; font-family:Verdana, Geneva, Tahoma, sans-serif;">${data.births[first].text}</a></li>
+                                            <li><a href="${data.births[second].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none; font-family:Verdana, Geneva, Tahoma, sans-serif;">${data.births[second].text}</a></li>
+                                            <li><a href="${data.births[third].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none; font-family:Verdana, Geneva, Tahoma, sans-serif;">${data.births[third].text}</a></li>
+                                            </ol>`
     })
 
-
-    death_title = document.getElementById("death-title")
-    death_text1 = document.getElementById("death-text1")
-    death_text2 = document.getElementById("death-text2")
-    death_text3 = document.getElementById("death-text3")
+    death_container = document.getElementById("famous-death-container")
 
     getDeath(chosen_date).then(data => {
         console.log(data)
@@ -240,10 +223,14 @@ function update(chosen_date){
         var second = Math.floor(Math.random() * max);
         var third = Math.floor(Math.random() * max);
 
-        death_title.textContent = `Famous Deaths (RIP)`
-        death_text1.textContent = `${data.deaths[first].text}`
-        death_text2.textContent = `${data.deaths[second].text}`
-        death_text3.textContent = `${data.deaths[third].text}`
+
+        death_container.innerHTML = `
+        <ol id="famous-birth-list">
+        <h4 id="holiday-title" class="content">Famous Deaths (RIP)</h4>
+        <li><a href="${data.deaths[first].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none; font-family:Verdana, Geneva, Tahoma, sans-serif;">${data.deaths[first].text}</a></li>
+        <li><a href="${data.deaths[second].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none; font-family:Verdana, Geneva, Tahoma, sans-serif;">${data.deaths[second].text}</a></li>
+        <li><a href="${data.deaths[third].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none; font-family:Verdana, Geneva, Tahoma, sans-serif;">${data.deaths[third].text}</a></li>
+        </ol>`
     })
 
 
