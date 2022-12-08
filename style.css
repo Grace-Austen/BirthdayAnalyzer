@@ -23,18 +23,7 @@ body {
 
 .content{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: var(--fontColor)
-}
-
-.inner-container{
-    width:50%;
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    flex-direction: row;
-}
-
-.content{
+    color: var(--fontColor);
     margin-left:auto;
     margin-right:auto;
     width:100%;
@@ -43,6 +32,10 @@ body {
 
 input{
     font-size:1.5em;
+}
+
+#date-input, #submit-button {
+    color: black;
 }
 
 header{
@@ -103,14 +96,6 @@ p {
     margin: 10px;
 }
 
-/* #bday-select-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
-} */
-
 #bday-select-table{
     margin-top: 2em;
     margin-bottom: 1em;
@@ -145,6 +130,15 @@ p {
     flex-direction: row;
 }
 
+
+.space-container{
+    width:50%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: row;
+}
+
 #horoscope-container{
     width:50%;
     display: flex;
@@ -159,7 +153,7 @@ p {
 #horoscope-type{
     text-align: center;
     font-family: satisfy-regular, cursive;
-    font-size: xx-large;
+    font-size: 2em;
 }
 
 .horoscope-text{
@@ -176,7 +170,7 @@ p {
     flex-direction: column;
 }
 #NASA_POD-img{
-    max-height:50vh;
+    max-width:50%;
     width: auto;
 }
 #NASA_POD-text{
@@ -185,61 +179,63 @@ p {
     color: var(--fontColor);
 }
 
-#billboard-container{
-    font-family: blippo-h, fantasy;
+
+#movie-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#movie-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#movie_pic1, #movie_pic2, #movie_pic3{
+    width: 50%;
+}
+
+.other-container{
+    width:50%;
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
     flex-direction: column;
     color: var(--fontColor);
 }
 
 #holiday-list{
     font-family: baskerville, Georgia, 'Times New Roman', Times, serif;
-    color: var(--fontColor);
 }
+/* #holiday-title{
+    text-decoration: underline;
+} */
 
-#famous-birth-container {
-    color: var(--fontColor);
-    text-decoration:none;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
+/* #famous-birth-container, #famous-death-container{
+    font-style: italic;
+} */
 
-#famous-death-container {
-    color: var(--fontColor);
-    text-decoration:none;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
-
-#holiday-title {
-    color: var(--fontColor);
-}
-
-#holiday-list {
-    color: var(--fontColor);
-}
-
-#famous-birth-list {
-    color: var(--fontColor);
-    text-decoration:none;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
-
-#famous-death-list {
-    color: var(--fontColor);
+#hyperd1, #hyperd2, #hyperd3 {
+    color:var(--fontColor);
     text-decoration:none;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #hyperb1, #hyperb2, #hyperb3 {
-    color: var(--fontColor);
+    color:var(--fontColor);
     text-decoration:none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
-
-#hyperd1, #hyperd2, #hyperd3 {
-    color: var(--fontColor);
-    text-decoration:none;
-}
-
 
 #florida-man-container{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     flex-direction: column;
     color: var(--fontColor);
+}
+
+h2 {
+    margin-top:0;
 }
