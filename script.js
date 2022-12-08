@@ -102,8 +102,7 @@ function inputToDateText(input_date) {
 function update(chosen_date){
 
     chosen_date = date_input.value
-
-    console.log(chosen_date)
+    curr_date_text = inputToDateText(chosen_date)
 
     bday_text = document.getElementById("bday-text")
 
@@ -112,7 +111,6 @@ function update(chosen_date){
     nasaPOD_text = document.getElementById("NASA_POD-text")
   
     //call funcs, set corresponding elements
-    curr_date_text = inputToDateText(chosen_date)
     setText(bday_text, curr_date_text)
     nasaPOD(chosen_date).then(data => {
         nasaPOD_img.src = data["img_url"]
@@ -204,12 +202,12 @@ function update(chosen_date){
 
 
         birth_container.innerHTML = `
-                                            <ol id="famous-birth-list">
-                                            <h4 id="holiday-title" class="content">Famous Birthdays</h4>
-                                            <li><a href="${data.births[first].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none; font-family:Verdana, Geneva, Tahoma, sans-serif;">${data.births[first].text}</a></li>
-                                            <li><a href="${data.births[second].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none; font-family:Verdana, Geneva, Tahoma, sans-serif;">${data.births[second].text}</a></li>
-                                            <li><a href="${data.births[third].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none; font-family:Verdana, Geneva, Tahoma, sans-serif;">${data.births[third].text}</a></li>
-                                            </ol>`
+                    <ol id="famous-birth-list">
+                    <h4 id="holiday-title" class="content">Famous Birthdays</h4>
+                    <li><a href="${data.births[first].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none; font-family:Verdana, Geneva, Tahoma, sans-serif;">${data.births[first].text}</a></li>
+                    <li><a href="${data.births[second].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none; font-family:Verdana, Geneva, Tahoma, sans-serif;">${data.births[second].text}</a></li>
+                    <li><a href="${data.births[third].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none; font-family:Verdana, Geneva, Tahoma, sans-serif;">${data.births[third].text}</a></li>
+                    </ol>`
     })
 
     death_container = document.getElementById("famous-death-container")
@@ -233,6 +231,17 @@ function update(chosen_date){
         </ol>`
     })
 
+    floridaManContainer = document.getElementById("florida-man-container")
+    getSearches(chosen_date).then(data => {
+        if(data.message !== undefined) {
+            floridaManContainer.innerHTML = `<h2>Florida Man Results for ${curr_date_text}</h2>
+                                            Sorry, there are no results at the current time.
+                                            `
+        } else {
+
+        }
+        console.log(data)
+    })
 
 }
 

@@ -13,14 +13,12 @@ async function getSearches(date) {
     let pageSize = 10;
     let autoCorrect = true;
     let safeSearch = false;
-    fetch(`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/WebSearchAPI?
+    return fetch(`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/WebSearchAPI?
         q=${query}
         &pageNumber=${pageNumber}
         &pageSize=${pageSize}
         &autoCorrect=${autoCorrect}`, options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+    .then(response => {return response.json()})
     
 }
 getSearches('5-28');

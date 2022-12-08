@@ -6,17 +6,6 @@
 
 .content{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.inner-container{
-    width:50%;
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    flex-direction: row;
-}
-
-.content{
     margin-left:auto;
     margin-right:auto;
     width:100%;
@@ -43,14 +32,6 @@ p {
     padding: 10px;
     margin: 10px;
 }
-
-/* #bday-select-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
-} */
 
 #bday-select-table{
     margin-top: 2em;
@@ -86,6 +67,15 @@ p {
     flex-direction: row;
 }
 
+
+.space-container{
+    width:50%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: row;
+}
+
 #horoscope-container{
     width:50%;
     display: flex;
@@ -99,7 +89,7 @@ p {
 #horoscope-type{
     text-align: center;
     font-family: satisfy-regular, cursive;
-    font-size: xx-large;
+    font-size: 2em;
 }
 
 .horoscope-text{
@@ -124,9 +114,31 @@ p {
     text-align: center;
 }
 
-#billboard-container{
-    font-family: blippo-h, fantasy;
-    flex-direction: column;
+
+#movie-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#movie-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#movie_pic1, #movie_pic2, #movie_pic3{
+    width: 50%;
+}
+
+.other-container{
+    width:50%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: row;
 }
 
 #holiday-list{
