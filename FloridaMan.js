@@ -43,7 +43,7 @@ async function getBingSearches(date) {
     return fetch(`https://bing-news-search1.p.rapidapi.com/news/search?q=${query}&safeSearch=Off&textFormat=Raw`, options)
         .then(response => response.json())
         .then(response => {
-            //console.log(response);
+            console.log(response);
             searchResults.name = response.value[0].name;
             searchResults.url = response.value[0].url;
             searchResults.description = response.value[0].description;
@@ -55,5 +55,5 @@ async function getBingSearches(date) {
         });
 }
 //getBingSearches('5-28');
-getBingSearches('5-28').then(results => console.log(results));
+// getBingSearches('5-28').then(results => console.log(results));
 //consolse.log(getSearches('may 25').data[0]);
