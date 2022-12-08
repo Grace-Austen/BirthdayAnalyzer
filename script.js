@@ -157,7 +157,6 @@ function update(chosen_date){
     })
 
     //holiday elements
-    holiday_container = document.getElementById("holiday-container")
     holiday_title = document.getElementById("holiday-title")
     holiday_text1 = document.getElementById("holiday-text1")
     holiday_text2 = document.getElementById("holiday-text2")
@@ -165,30 +164,29 @@ function update(chosen_date){
 
     getHoliday(chosen_date).then(data => {
 
-        holiday_title.textContent = `Holidays on ${curr_date_text}`
+        holiday_title.textContent = `Holidays`
 
         if(typeof(data[0]) !== "undefined")
-            holiday_text1.textContent = `1. ${data[0].name}`
+            holiday_text1.textContent = `${data[0].name}`
         else
             holiday_text1.textContent = `There are no holiday's on this day`
         if (typeof(data[1]) !== "undefined")
-            holiday_text2.textContent = `2. ${data[1].name}`
+            holiday_text2.textContent = `${data[1].name}`
         else
-            holiday_text2.textContent = ` `
+            holiday_text2.textContent = `N/A`
         if (typeof(data[2]) !== "undefined")
-            holiday_text3.textContent = `3. ${data[2].name}`
+            holiday_text3.textContent = `${data[2].name}`
         else
-            holiday_text3.textContent = ` `
+            holiday_text3.textContent = `N/A`
     })
+
 
     birth_container = document.getElementById("famous-birth-container")
     birth_title = document.getElementById("birth-title")
 
-
     getBirth(chosen_date).then(data => {
 
         pages0 = data.births[0].pages
-        // console.log( data.births[0].pages[0].content_urls.desktop.page)
 
         var max = data.births.length
 

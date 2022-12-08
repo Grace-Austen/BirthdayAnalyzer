@@ -202,29 +202,26 @@ p {
     width:50%;
     display:flex;
     justify-content:flex-start;
-    align-items: center;
+    align-items: left;
     flex-direction: column;
     color: var(--fontColor);
 }
 
-#holiday-list{
-    font-family: baskerville, Georgia, 'Times New Roman', Times, serif;
+#holiday-title{
+    align-items: center;
 }
-/* #holiday-title{
-    text-decoration: underline;
-} */
 
-/* #famous-birth-container, #famous-death-container{
-    font-style: italic;
-} */
+#holiday-container{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
-#hyperd1, #hyperd2, #hyperd3 {
+#hyperd1, #hyperd2, #hyperd3, #famous-death-container {
     color:var(--fontColor);
     text-decoration:none;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#hyperb1, #hyperb2, #hyperb3 {
+#hyperb1, #hyperb2, #hyperb3, #famous-birth-container {
     color:var(--fontColor);
     text-decoration:none;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
