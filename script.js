@@ -206,9 +206,9 @@ function update(chosen_date){
         birth_container.innerHTML = `
                                             <ol id="famous-birth-list">
                                             <h4 id="holiday-title" class="content">Famous Birthdays</h4>
-                                            <li><a href="${data.births[first].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none; font-family:Verdana, Geneva, Tahoma, sans-serif;">${data.births[first].text}</a></li>
-                                            <li><a href="${data.births[second].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none; font-family:Verdana, Geneva, Tahoma, sans-serif;">${data.births[second].text}</a></li>
-                                            <li><a href="${data.births[third].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none; font-family:Verdana, Geneva, Tahoma, sans-serif;">${data.births[third].text}</a></li>
+                                            <li><a href="${data.births[first].pages[0].content_urls.desktop.page}" id = hyperb1>${data.births[first].text}</a></li>
+                                            <li><a href="${data.births[second].pages[0].content_urls.desktop.page}" id = hyperb2>${data.births[second].text}</a></li>
+                                            <li><a href="${data.births[third].pages[0].content_urls.desktop.page}" id = hyperb3>${data.births[third].text}</a></li>
                                             </ol>`
     })
 
@@ -225,13 +225,30 @@ function update(chosen_date){
 
 
         death_container.innerHTML = `
-        <ol id="famous-birth-list">
+        <ol id="famous-death-list">
         <h4 id="holiday-title" class="content">Famous Deaths (RIP)</h4>
-        <li><a href="${data.deaths[first].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none; font-family:Verdana, Geneva, Tahoma, sans-serif;">${data.deaths[first].text}</a></li>
-        <li><a href="${data.deaths[second].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none; font-family:Verdana, Geneva, Tahoma, sans-serif;">${data.deaths[second].text}</a></li>
-        <li><a href="${data.deaths[third].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none; font-family:Verdana, Geneva, Tahoma, sans-serif;">${data.deaths[third].text}</a></li>
+        <li><a href="${data.deaths[first].pages[0].content_urls.desktop.page}" id = hyperd1>${data.deaths[first].text}</a></li>
+        <li><a href="${data.deaths[second].pages[0].content_urls.desktop.page}" id = hyperd2>${data.deaths[second].text}</a></li>
+        <li><a href="${data.deaths[third].pages[0].content_urls.desktop.page}" id = hyperd3>${data.deaths[third].text}</a></li>
         </ol>`
     })
+
+    const switcher = document.querySelector('.btn');
+    
+    switcher.addEventListener('click', function()
+        {document.body.classList.toggle('dark-theme')
+
+        var className = document.body.className;
+        if(className == "light-theme"){
+            this.textContent = "Dark";
+        }
+        else {
+            this.textContent = "Light";
+        }
+
+        console.log('current class name: ' + className);
+
+    });
 
 
 }

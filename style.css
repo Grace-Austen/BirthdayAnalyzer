@@ -1,11 +1,29 @@
+:root {
+    --darkGray: #121212;
+    --deepPurple: #673AB7;
+    --lightGray: #e5e7ea;
+    --orange: #f79b19;
+    --black: #000000;
+    --gold: #edc366;
+    --aspenGold: #ffd662;
+}
+
 .content-container{
     width:80%;
     margin-left:auto;
     margin-right:auto;
 }
 
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--bg);
+}
+
 .content{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--fontColor)
 }
 
 .inner-container{
@@ -20,6 +38,7 @@
     margin-left:auto;
     margin-right:auto;
     width:100%;
+    color: var(--fontColor)
 }
 
 input{
@@ -31,6 +50,46 @@ header{
     font-family: lobster, cursive;
     /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
     text-align: center;
+    color: var(--headerColor)
+}
+
+.light-theme {
+    --bg: var(--lightGray);
+    --fontColor: var(--black);
+    --btnFontColor: var(--black);
+    --headerColor: var(--orange);
+}
+
+.dark-theme {
+    --bg: var(--darkGray);
+    --fontColor: var(--lightGray);
+    --btnFontColor: var(--black);
+    --headerColor: var(--deepPurple);
+}
+
+.btn {
+    position: absolute;
+    top: 160px;
+    right: 30px;
+    height: 40px;
+    width: 65px;
+    border: none;
+    color: var(--btnFontColor);
+    background-color: var(--gold);
+    background-image: linear-gradient(var(--gold),var(--aspenGold));
+    border-radius: 3px;
+    box-shadow: 0px 1px 4px -2px #333;
+    text-shadow: 0px -1px #333;
+}
+.btn:focus {outline-style: none;}
+.btn:after{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: 50%;
+    background: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.2));
 }
 
 p {
@@ -38,7 +97,7 @@ p {
 }
 
 .row-container {
-    border: 1px solid black;
+    border: 1px solid var(--headerColor);
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
@@ -94,6 +153,7 @@ p {
     margin-right: auto;
     flex-direction: column;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--fontColor);
 }
 
 #horoscope-type{
@@ -122,24 +182,64 @@ p {
 #NASA_POD-text{
     width: max-content;
     text-align: center;
+    color: var(--fontColor);
 }
 
 #billboard-container{
     font-family: blippo-h, fantasy;
     flex-direction: column;
+    color: var(--fontColor);
 }
 
 #holiday-list{
     font-family: baskerville, Georgia, 'Times New Roman', Times, serif;
+    color: var(--fontColor);
 }
-/* #holiday-title{
-    text-decoration: underline;
-} */
 
-/* #famous-birth-container, #famous-death-container{
-    font-style: italic;
-} */
+#famous-birth-container {
+    color: var(--fontColor);
+    text-decoration:none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#famous-death-container {
+    color: var(--fontColor);
+    text-decoration:none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#holiday-title {
+    color: var(--fontColor);
+}
+
+#holiday-list {
+    color: var(--fontColor);
+}
+
+#famous-birth-list {
+    color: var(--fontColor);
+    text-decoration:none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#famous-death-list {
+    color: var(--fontColor);
+    text-decoration:none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#hyperb1, #hyperb2, #hyperb3 {
+    color: var(--fontColor);
+    text-decoration:none;
+}
+
+#hyperd1, #hyperd2, #hyperd3 {
+    color: var(--fontColor);
+    text-decoration:none;
+}
+
 
 #florida-man-container{
     flex-direction: column;
+    color: var(--fontColor);
 }
