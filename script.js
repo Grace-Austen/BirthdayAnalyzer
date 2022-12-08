@@ -198,12 +198,12 @@ function update(chosen_date){
 
 
         birth_container.innerHTML = `
-                    <h4 id="holiday-title" class="other-header">Famous Birthdays</h4>
-                    <ol id="famous-birth-list">
-                    <li><a href="${data.births[first].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none;" class="content">${data.births[first].text}</a></li>
-                    <li><a href="${data.births[second].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none;" class="content">${data.births[second].text}</a></li>
-                    <li><a href="${data.births[third].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none;" class="content">${data.births[third].text}</a></li>
-                    </ol>`
+            <ol id="famous-birth-list">
+            <h4 id="holiday-title" class="content">Famous Birthdays</h4>
+            <li><a href="${data.births[first].pages[0].content_urls.desktop.page}" id = hyperb1>${data.births[first].text}</a></li>
+            <li><a href="${data.births[second].pages[0].content_urls.desktop.page}" id = hyperb2>${data.births[second].text}</a></li>
+            <li><a href="${data.births[third].pages[0].content_urls.desktop.page}" id = hyperb3>${data.births[third].text}</a></li>
+            </ol>`
     })
 
     death_container = document.getElementById("famous-death-container")
@@ -218,29 +218,30 @@ function update(chosen_date){
 
 
         death_container.innerHTML = `
-        <h4 id="holiday-title" class="other-header">Famous Deaths (RIP)</h4>
-        <ol id="famous-birth-list">
-        <li><a href="${data.deaths[first].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none;" class="content">${data.deaths[first].text}</a></li>
-        <li><a href="${data.deaths[second].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none;" class="content">${data.deaths[second].text}</a></li>
-        <li><a href="${data.deaths[third].pages[0].content_urls.desktop.page}" style="color:#000000; text-decoration:none;" class="content">${data.deaths[third].text}</a></li>
-        </ol>`
+            <ol id="famous-birth-list">
+            <h4 id="holiday-title" class="content">Famous Deaths (RIP)</h4>
+            <li><a href="${data.deaths[first].pages[0].content_urls.desktop.page}" id = hyperd1>${data.deaths[first].text}</a></li>
+            <li><a href="${data.deaths[second].pages[0].content_urls.desktop.page}" id = hyperd2>${data.deaths[second].text}</a></li>
+            <li><a href="${data.deaths[third].pages[0].content_urls.desktop.page}" id = hyperd1>${data.deaths[third].text}</a></li>
+            </ol>`
     })
 
-    floridaManContainer = document.getElementById("florida-man-container")
-    getBingSearches(chosen_date).then(data => {
-        console.log(data)
-        if(data.message !== undefined) {
-            floridaManContainer.innerHTML = `<h2>Florida Man Results for ${curr_date_text}</h2>
-                                            <p class="content">Sorry, there are no results at the current time.</p>
-                                            `
-        } else {
-            floridaManContainer.innerHTML = `<h2>Florida Man Results for ${curr_date_text}</h2>
-                                            <a href="${data.url}" target="_blank" class="content" id="florida-man-headline">${data.name}</a>
-                                            <br>
-                                            <p class="content">${data.description}</p>
-                                            `
+    const switcher = document.querySelector('.btn');
+    switcher.addEventListener('click', function(){
+        document.body.classList.toggle('dark-theme')
+
+        var className = document.body.className;
+        if(className == "light-theme"){
+            this.textContent = "Dark";
         }
-    })
+        else {
+            this.textContent = "Light";
+        }
+
+        console.log('current class name: ' + className);
+
+    });
+
 
 }
 
