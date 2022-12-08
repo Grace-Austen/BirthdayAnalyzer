@@ -3,7 +3,7 @@ async function getSearches(date) {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'bf5c1ebaa5msh882d068e31c56ecp1a13dajsnb7d4ba49e04c',
+            'X-RapidAPI-Key': 'eddffe8a5cmsh0c8b5e295ad3bbep150f5cjsn14e5677b61e9',//'bf5c1ebaa5msh882d068e31c56ecp1a13dajsnb7d4ba49e04c',
             'X-RapidAPI-Host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
         }
     };

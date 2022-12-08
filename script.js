@@ -25,7 +25,6 @@ function inputToDateText(input_date) {
         error_message = "Enter a date!"
         day = new Date(input_date).getDay()
         date = input_date.split("-")
-        console.log(day)
         switch(day) {
             case 0:
                 dateString = "Monday, "
@@ -166,11 +165,8 @@ function update(chosen_date){
 
     getHoliday(chosen_date).then(data => {
 
-        console.log(data)
-
         holiday_title.textContent = `Holidays on ${curr_date_text}`
-        // console.log(data)
-        // console.log(data[0])
+
         if(typeof(data[0]) !== "undefined")
             holiday_text1.textContent = `1. ${data[0].name}`
         else
@@ -192,7 +188,7 @@ function update(chosen_date){
     getBirth(chosen_date).then(data => {
 
         pages0 = data.births[0].pages
-        console.log( data.births[0].pages[0].content_urls.desktop.page)
+        // console.log( data.births[0].pages[0].content_urls.desktop.page)
 
         var max = data.births.length
 
@@ -213,7 +209,6 @@ function update(chosen_date){
     death_container = document.getElementById("famous-death-container")
 
     getDeath(chosen_date).then(data => {
-        console.log(data)
 
         var max = data.deaths.length
 
