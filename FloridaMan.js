@@ -7,8 +7,7 @@ async function getSearches(date) {
             'X-RapidAPI-Host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
         }
     };
-    //let query = `Florida%20Man%20${date}`;
-    let query = 'hi'
+    let query = `Florida%20Man%20${date}`;
     let pageNumber = 1;
     let pageSize = 10;
     let autoCorrect = true;
@@ -21,5 +20,40 @@ async function getSearches(date) {
     .then(response => {return response.json()})
     
 }
-getSearches('5-28');
+
+
+
+async function getBingSearches(date) {
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-BingApis-SDK': 'true',
+            'X-RapidAPI-Key': 'bf5c1ebaa5msh882d068e31c56ecp1a13dajsnb7d4ba49e04c',
+            'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
+        }
+    };
+
+    let searchResults = {
+        name: "error name",
+        url: "error url",
+        description: "error description"
+    }
+
+    let query = `Florida%20Man%20${date}`;
+    return fetch(`https://bing-news-search1.p.rapidapi.com/news/search?q=${query}&safeSearch=Off&textFormat=Raw`, options)
+        .then(response => response.json())
+        .then(response => {
+            //console.log(response);
+            searchResults.name = response.value[0].name;
+            searchResults.url = response.value[0].url;
+            searchResults.description = response.value[0].description;
+            return searchResults;
+        })
+        .catch(err => {
+            console.error(err);
+            return searchResults;
+        });
+}
+//getBingSearches('5-28');
+getBingSearches('5-28').then(results => console.log(results));
 //consolse.log(getSearches('may 25').data[0]);
