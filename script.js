@@ -124,15 +124,15 @@ function update(chosen_date){
 
     getHoroscope(chosen_date).then(data => {
         horoscope_container.innerHTML = `
-                                        <p id="horoscope-type"><b>${getSign(chosen_date)}</b></p>
-                                        <hr style="width: 90%">
-                                        <p id="horoscope-descr" class="horoscope-text">${data.description}</p>
-                                        <br>
-                                        <p class="horoscope-text">Your lucky time today is ${data.lucky_time}</p>
-                                        <p class="horoscope-text">Your power color today is ${data.color}</p>
-                                        <p class="horoscope-text">You are compatible with the ${data.compatibility} sign</p>
-                                        <p class="horoscope-text">You are likely to be in a ${data.mood} mood today!</p>
-                                        `
+            <p id="horoscope-type"><b>${getSign(chosen_date)}</b></p>
+            <hr style="width: 90%">
+            <p id="horoscope-descr" class="horoscope-text">${data.description}</p>
+            <br>
+            <p class="horoscope-text">Your lucky time today is ${data.lucky_time}</p>
+            <p class="horoscope-text">Your power color today is ${data.color}</p>
+            <p class="horoscope-text">You are compatible with the ${data.compatibility} sign</p>
+            <p class="horoscope-text">You are likely to be in a ${data.mood} mood today!</p>
+            `
     })
 
     movie_title = document.getElementById("movie-title")
