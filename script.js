@@ -223,6 +223,22 @@ function update(chosen_date){
             <li><a href="${data.deaths[third].pages[0].content_urls.desktop.page}" id = hyperd1>${data.deaths[third].text}</a></li>
             </ol>`
     })
+    
+    floridaManContainer = document.getElementById("florida-man-container")
+    getBingSearches(chosen_date).then(data => {
+        console.log(data)
+        if(data.message !== undefined) {
+            floridaManContainer.innerHTML = `<h2>Florida Man Results for ${curr_date_text}</h2>
+                                            <p class="content">Sorry, there are no results at the current time.</p>
+                                            `
+        } else {
+            floridaManContainer.innerHTML = `<h2>Florida Man Results for ${curr_date_text}</h2>
+                                            <a href="${data.url}" target="_blank" class="content" id="florida-man-headline">${data.name}</a>
+                                            <br>
+                                            <p class="content">${data.description}</p>
+                                            `
+        }
+    }
 
     const switcher = document.querySelector('.btn');
     switcher.addEventListener('click', function(){
