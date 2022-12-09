@@ -124,15 +124,15 @@ function update(chosen_date){
 
     getHoroscope(chosen_date).then(data => {
         horoscope_container.innerHTML = `
-                                        <p id="horoscope-type"><b>${getSign(chosen_date)}</b></p>
-                                        <hr style="width: 90%">
-                                        <p id="horoscope-descr" class="horoscope-text">${data.description}</p>
-                                        <br>
-                                        <p class="horoscope-text">Your lucky time today is ${data.lucky_time}</p>
-                                        <p class="horoscope-text">Your power color today is ${data.color}</p>
-                                        <p class="horoscope-text">You are compatible with the ${data.compatibility} sign</p>
-                                        <p class="horoscope-text">You are likely to be in a ${data.mood} mood today!</p>
-                                        `
+            <p id="horoscope-type"><b>${getSign(chosen_date)}</b></p>
+            <hr style="width: 90%">
+            <p id="horoscope-descr" class="horoscope-text">${data.description}</p>
+            <br>
+            <p class="horoscope-text">Your lucky time today is ${data.lucky_time}</p>
+            <p class="horoscope-text">Your power color today is ${data.color}</p>
+            <p class="horoscope-text">You are compatible with the ${data.compatibility} sign</p>
+            <p class="horoscope-text">You are likely to be in a ${data.mood} mood today!</p>
+            `
     })
 
     movie_title = document.getElementById("movie-title")
@@ -196,12 +196,12 @@ function update(chosen_date){
 
 
         birth_container.innerHTML = `
-            <ol id="famous-birth-list">
+            <ul id="famous-birth-list">
             <h4 id="holiday-title" class="content">Famous Birthdays</h4>
             <li><a href="${data.births[first].pages[0].content_urls.desktop.page}" id = hyperb1>${data.births[first].text}</a></li>
             <li><a href="${data.births[second].pages[0].content_urls.desktop.page}" id = hyperb2>${data.births[second].text}</a></li>
             <li><a href="${data.births[third].pages[0].content_urls.desktop.page}" id = hyperb3>${data.births[third].text}</a></li>
-            </ol>`
+            </ul>`
     })
 
     death_container = document.getElementById("famous-death-container")
@@ -216,12 +216,12 @@ function update(chosen_date){
 
 
         death_container.innerHTML = `
-            <ol id="famous-birth-list">
+            <ul id="famous-birth-list">
             <h4 id="holiday-title" class="content">Famous Deaths (RIP)</h4>
             <li><a href="${data.deaths[first].pages[0].content_urls.desktop.page}" id = hyperd1>${data.deaths[first].text}</a></li>
             <li><a href="${data.deaths[second].pages[0].content_urls.desktop.page}" id = hyperd2>${data.deaths[second].text}</a></li>
             <li><a href="${data.deaths[third].pages[0].content_urls.desktop.page}" id = hyperd1>${data.deaths[third].text}</a></li>
-            </ol>`
+            </ul>`
     })
     
     floridaManContainer = document.getElementById("florida-man-container")
@@ -238,7 +238,7 @@ function update(chosen_date){
                                             <p class="content">${data.description}</p>
                                             `
         }
-    }
+    })
 
     const switcher = document.querySelector('.btn');
     switcher.addEventListener('click', function(){
