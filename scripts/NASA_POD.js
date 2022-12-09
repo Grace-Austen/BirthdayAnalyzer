@@ -1,12 +1,11 @@
-//API key
-API_KEY = 'E24iDq9jhvLGggYsFugUinAXI2aAeropVkq8DNZz'
-
-//API url
-api_url = 'https://api.nasa.gov/planetary/apod'
-
 function nasaPOD(date) {
+    //API key
+    API_KEY = 'E24iDq9jhvLGggYsFugUinAXI2aAeropVkq8DNZz'
+
+    //API url
+    api_url = 'https://api.nasa.gov/planetary/apod'
+
     return fetch_img_json(date).then(json =>{
-        // console.log(json)
         if(json["error"] !== undefined) {
             return {"date": json["date"], "img_url": "https://apod.nasa.gov/apod/image/2211/LunarEclipseRyanHan.jpg", "valid": false}
         }

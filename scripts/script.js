@@ -18,6 +18,23 @@ function run() {
     
     submit_button.addEventListener("click", update)
 
+    
+    const switcher = document.querySelector('.btn');
+    switcher.addEventListener('click', function(){
+        document.body.classList.toggle('dark-theme')
+
+        var className = document.body.className;
+        if(className == "light-theme"){
+            this.textContent = "Dark";
+        }
+        else {
+            this.textContent = "Light";
+        }
+
+        // console.log('current class name: ' + className);
+
+    });
+
 }
 
 function inputToDateText(input_date) {
@@ -99,6 +116,7 @@ function inputToDateText(input_date) {
 }
 
 function update(chosen_date){
+    console.log("Date: ", chosen_date)
 
     chosen_date = date_input.value
     curr_date_text = inputToDateText(chosen_date)
@@ -110,8 +128,9 @@ function update(chosen_date){
     nasaPOD_text = document.getElementById("NASA_POD-text")
   
     //call funcs, set corresponding elements
-    setText(bday_text, curr_date_text)
+    bday_text.textContent = curr_date_text
     nasaPOD(chosen_date).then(data => {
+        console.log("NASA Data: ", data)
         nasaPOD_img.src = data["img_url"]
         if(data["valid"]){        
             nasaPOD_text.textContent = `NASA picture of the day from ${curr_date_text}`
@@ -123,6 +142,7 @@ function update(chosen_date){
     horoscope_container = document.getElementById("horoscope-container")
 
     getHoroscope(chosen_date).then(data => {
+        console.log("Horoscope data: ", data)
         horoscope_container.innerHTML = `
             <p id="horoscope-type"><b>${getSign(chosen_date)}</b></p>
             <hr style="width: 90%">
@@ -144,16 +164,17 @@ function update(chosen_date){
     movie_pic3 = document.getElementById("movie_pic3")
    
    getMovies(chosen_date).then(data => {
-    movie_title.textContent = `Movies`
+        console.log("Movie data: ", data)
+        movie_title.textContent = `Movies`
 
-    movie_text1.textContent = `${data.results[0].original_title}`
-    movie_pic1.src =`https://image.tmdb.org/t/p/w500/${data.results[0].poster_path}`
-    
-    movie_text2.textContent = `${data.results[1].original_title}`
-    movie_pic2.src = `https://image.tmdb.org/t/p/w500/${data.results[1].poster_path}`
+        movie_text1.textContent = `${data.results[0].original_title}`
+        movie_pic1.src =`https://image.tmdb.org/t/p/w500/${data.results[0].poster_path}`
+        
+        movie_text2.textContent = `${data.results[1].original_title}`
+        movie_pic2.src = `https://image.tmdb.org/t/p/w500/${data.results[1].poster_path}`
 
-    movie_text3.textContent = `${data.results[2].original_title}`
-    movie_pic3.src = `https://image.tmdb.org/t/p/w500/${data.results[2].poster_path}`
+        movie_text3.textContent = `${data.results[2].original_title}`
+        movie_pic3.src = `https://image.tmdb.org/t/p/w500/${data.results[2].poster_path}`
     })
 
     //holiday elements
@@ -163,7 +184,7 @@ function update(chosen_date){
     holiday_text3 = document.getElementById("holiday-text3")
 
     getHoliday(chosen_date).then(data => {
-
+        console.log("Holiday data: ", data)
         holiday_title.textContent = `Holidays`
 
         if(typeof(data[0]) !== "undefined")
@@ -185,7 +206,7 @@ function update(chosen_date){
     birth_title = document.getElementById("birth-title")
 
     getBirth(chosen_date).then(data => {
-
+        console.log("Birth data: ", data)
         pages0 = data.births[0].pages
 
         var max = data.births.length
@@ -207,7 +228,7 @@ function update(chosen_date){
     death_container = document.getElementById("famous-death-container")
 
     getDeath(chosen_date).then(data => {
-
+        console.log("Death data: ", data)
         var max = data.deaths.length
 
         var first = Math.floor(Math.random() * max);
@@ -226,7 +247,7 @@ function update(chosen_date){
     
     floridaManContainer = document.getElementById("florida-man-container")
     getBingSearches(chosen_date).then(data => {
-        console.log(data)
+        console.log("Florida man response: ", data)
         if(data.message !== undefined) {
             floridaManContainer.innerHTML = `<h2>Florida Man Results for ${curr_date_text}</h2>
                                             <p class="content">Sorry, there are no results at the current time.</p>
@@ -240,26 +261,5 @@ function update(chosen_date){
         }
     })
 
-    const switcher = document.querySelector('.btn');
-    switcher.addEventListener('click', function(){
-        document.body.classList.toggle('dark-theme')
-
-        var className = document.body.className;
-        if(className == "light-theme"){
-            this.textContent = "Dark";
-        }
-        else {
-            this.textContent = "Light";
-        }
-
-        console.log('current class name: ' + className);
-
-    });
-
-
 }
 
-
-function setText(elem, text) {
-    elem.textContent = text
-}

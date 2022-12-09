@@ -50,10 +50,6 @@ async function getBingSearches(date) {
             return searchResults;
         })
         .catch(err => {
-            console.error(err);
             return searchResults;
         });
 }
-//getBingSearches('5-28');
-// getBingSearches('5-28').then(results => console.log(results));
-//consolse.log(getSearches('may 25').data[0]);
