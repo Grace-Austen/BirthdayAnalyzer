@@ -237,6 +237,8 @@ function update(chosen_date){
                                             <br>
                                             <p class="content">${data.description}</p>
                                             `
+        }
+    }
 
     const switcher = document.querySelector('.btn');
     switcher.addEventListener('click', function(){
