@@ -1,17 +1,26 @@
 # Birthday Analyzer
 
-Hi, this project focuses on creating a website that combines 3 key API's:
+Hi, this project focuses on creating a website that intakes a birthday and uses js API's to present the user with different information about things that happened on their birthday. These include: 
+ - Horoscope
+ - NASA's picture of the day
+ - Movies that came out the year you were born
+ - Holidays on your birthday
+ - Famous birthdays
+ - Famous deaths
+ - Florida Man results
 
- - [NASA API](https://api.nasa.gov/)
- - [Astrosoft API](http://docs.innovativeastrosolutions.com/)
- - [Billboard API](www.google.com)
- - [Aztro API](https://rapidapi.com/sameer.kumar/api/aztro)
- - [Web Search API](https://rapidapi.com/contextualwebsearch/api/web-search/)
- - [Famous Birthdays API](https://www.famousbirthdays.com/)
+We used the following API's to meet our goal:
+
+ - [Mozilla Fetch API to access our other APIs](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+ - [Aztro API for horoscope](https://rapidapi.com/sameer.kumar/api/aztro)
+ - [NASA API for NASA picture of the day](https://api.nasa.gov/)
+ - [The Movie Database API](https://www.themoviedb.org/documentation/api)
  - [Abstract Holidays API](https://www.abstractapi.com/api/holidays-api)
- 
+ - [Wikimedia On This Day API for famous births and deaths](https://api.wikimedia.org/wiki/API_reference/Feed/On_this_day)
+ - [Bing News Search API for Florida Man](https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1)
 
-This website will pull all of these together to let you know what was happening on your birthday, what your horoscope is, and what NASA's picutre of the day was!
+One additional feature we have is the ability to switch between lightmode and darkmode.
+
 ## Authors
 
 - [Jenna Adams](https://www.github.com/jen000)
